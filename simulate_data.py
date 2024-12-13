@@ -1,36 +1,39 @@
 import os
-import django
 import sys
-
-# Add the 'backend' folder to the Python path
-sys.path.append(os.path.join(os.path.dirname(__file__), "backend"))
-
-# Set the DJANGO_SETTINGS_MODULE environment variable
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nuclear_monitoring.settings')
-
-print("Python Path:", sys.path)
-print("Working Directory:", os.getcwd())
-
-# Set up Django
-django.setup()
-
-from monitoring.models import Metric
+import django
+from datetime import datetime
 import random
 import time
 
-def generate_metrics():
-    while True:
-        metric = Metric(
-            primary_coolant_pressure=round(random.uniform(2000, 2500), 2),
-            steam_pressure=round(random.uniform(900, 1200), 2),
-            primary_coolant_temperature=round(random.uniform(550, 650), 2),
-            steam_temperature=round(random.uniform(500, 600), 2),
-            feedwater_flow_rate=round(random.uniform(1000, 2000), 2),
-            thermal_efficiency=round(random.uniform(30, 35), 2),
-        )
-        metric.save()
-        print(f"Saved metric at {metric.timestamp}")
-        time.sleep(10)
+# Add the backend folder to the Python path
+sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
 
-if __name__ == "__main__":
-    generate_metrics()
+# Set the Django settings module
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nuclear_monitoring.settings')
+
+# Initialize Django
+django.setup()
+
+from monitoring.models import Metric
+
+
+def generate_metrics():
+    metric = Metric(
+        primary_coolant_pressure=random.uniform(2000, 2500),
+        steam_pressure=random.uniform(1000, 1200),
+        primary_coolant_temperature=random.uniform(500, 600),
+        steam_temperature=random.uniform(500, 550),
+        feedwater_flow_rate=random.uniform(1100, 1200),
+        thermal_efficiency=random.uniform(30, 40),
+        anomaly=False,
+        timestamp=datetime.now(),
+    )
+    metric.save()
+
+try:
+    while True:
+        generate_metrics()
+        print("Simulated data collected...")
+        time.sleep(10)
+except KeyboardInterrupt:
+    print("Stopped metric generation.")
