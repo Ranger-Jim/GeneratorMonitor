@@ -19,12 +19,12 @@ from monitoring.models import Metric
 
 def generate_metrics():
     metric = Metric(
-        primary_coolant_pressure=random.uniform(2000, 2500),
-        steam_pressure=random.uniform(1000, 1200),
-        primary_coolant_temperature=random.uniform(500, 600),
-        steam_temperature=random.uniform(500, 550),
-        feedwater_flow_rate=random.uniform(1100, 1200),
-        thermal_efficiency=random.uniform(30, 40),
+        primary_coolant_pressure=random.uniform(10, 20),
+        steam_pressure=random.uniform(2, 10),
+        primary_coolant_temperature=random.uniform(250, 350),
+        steam_temperature=random.uniform(150, 600),
+        feedwater_flow_rate=random.uniform(50, 150),
+        thermal_efficiency=random.uniform(30, 50),
         anomaly=False,
         timestamp=datetime.now(),
     )

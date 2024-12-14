@@ -1,0 +1,50 @@
+body {
+  margin: 0; /* Remove default margin */
+  padding: 20px; /* Add padding around the entire page */
+  box-sizing: border-box; /* Ensure padding is included in the element's dimensions */
+}
+
+.metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+.metrics-table th, .metrics-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.metrics-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.metrics-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.metrics-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.metrics-table td {
+  white-space: nowrap; /* Prevents text wrapping in cells */
+}
+
+.graphs-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Space between graphs */
+  margin-bottom: 40px; /* Space below graphs */
+}
+
+.graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
