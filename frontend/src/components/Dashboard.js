@@ -65,7 +65,7 @@ const Dashboard = () => {
             data={metrics}
             margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
           >
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid stroke="#000000" />
             <XAxis
               dataKey="timestamp"
               tickFormatter={(timestamp) => new Date(timestamp).toLocaleTimeString()}
@@ -99,7 +99,7 @@ const Dashboard = () => {
             data={metrics}
             margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
           >
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid stroke="#000000" />
             <XAxis
               dataKey="timestamp"
               tickFormatter={(timestamp) => new Date(timestamp).toLocaleTimeString()}
@@ -133,7 +133,7 @@ const Dashboard = () => {
             data={metrics}
             margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
           >
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid stroke="#000000" />
             <XAxis
               dataKey="timestamp"
               tickFormatter={(timestamp) => new Date(timestamp).toLocaleTimeString()}
@@ -161,7 +161,7 @@ const Dashboard = () => {
             data={metrics}
             margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
           >
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid stroke="#000000" />
             <XAxis
               dataKey="timestamp"
               tickFormatter={(timestamp) => new Date(timestamp).toLocaleTimeString()}
